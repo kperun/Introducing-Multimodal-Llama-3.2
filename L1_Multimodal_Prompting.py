@@ -59,9 +59,11 @@ def visionInputImageFromUrl():
     result = llama32(messages, 90)
     print(result)
 
+
 def encode_image(image_path):
     with open(image_path, "rb") as image_file:
         return base64.b64encode(image_file.read()).decode('utf-8')
+
 
 def visionInputImageFromLocal():
     # We need the image as in base64 handed over to the request, because then it can be interpreted
@@ -101,14 +103,14 @@ def visionInputImageFromLocal():
 
 
 def llama32pi(prompt, image_url, model_size=90):
-    '''
+    """
     We can define the prompting for an image in a function which expects the model size, the prompt and the image
     to encapsulate the message.
     :param prompt: the prompt we want to execute on the image
     :param image_url: the url to the image (or base 64 encoded)
     :param model_size: the model size, e.g., 70 or 90 B
     :return: the message reponse
-    '''
+    """
     messages = [
         {
             "role": "user",
@@ -150,7 +152,7 @@ def visionInputFromFunctionExamples():
 
 
 if __name__ == '__main__':
-    print("Text only:" + '*'*100)
+    print("Text only:" + '*' * 100)
     textOnlyInputMessage()
     print("Vision from from url" + '*' * 100)
     visionInputImageFromUrl()
