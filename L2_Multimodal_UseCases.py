@@ -11,6 +11,7 @@ load_env()
 L2 is a collection of use cases possible with the vision feature of Llama 3.2.
 '''
 
+
 def encode_image(image_path):
     """
     Images handed over to llama have to be encoded in base64.
